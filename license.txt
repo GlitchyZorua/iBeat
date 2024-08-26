@@ -1,0 +1,31 @@
+iBeat version 2.0
+Copyright (C) 1998-1999 Holger Schmidt
+All Rights Reserved
+
+***********************
+** License Agreement **
+***********************
+By using the software, I agree to the following terms and conditions. If I 
+do not agree with such terms and conditions I will not use the software.
+
+I am granted a non-exclusive license to use the downloaded software, however, restricted 
+to my personal and non-commercial purposes.
+
+DISCLAIMER OF WARRANTIES: I AGREE THAT I HAVE NOT BEEN MADE EXPRESS WARRANTIES REGARDING 
+THE SOFTWARE AND THAT THE SOFTWARE IS BEING PROVIDED TO ME "AS IS" WITHOUT WARRANTY 
+OF ANY KIND. I AGREE, THAT ALL WARRANTIES ARE DISCLAIMED WITH REGARD TO THE SOFTWARE, 
+EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY IMPLIED WARRANTIES OF FITNESS 
+FOR A PARTICULAR PURPOSE, MERCHANTABILITY, MERCHANTABLE QUALITY OR NONINFRINGEMENT OF 
+THIRD PARTY RIGHTS. 
+I know, that some states or jurisdictions do not allow the exclusion of implied 
+warranties so the above limitations may not apply to me.
+
+LIMIT OF LIABILITY: IN NO EVENT WILL DISTRIBUTOR OR ANY OTHER PARTY BE LIABLE TO ME 
+FOR ANY LOSS OF USE, INTERRUPTION OF BUSINESS, OR ANY DIRECT, INDIRECT, SPECIAL, 
+INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY KIND (INCLUDING LOST PROFITS) REGARDLESS 
+OF THE FORM OF ACTION WHETHER IN CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT PRODUCT 
+LIABILITY OR OTHERWISE, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH 
+DAMAGES. 
+I know, that, some states or jurisdictions do not allow the exclusion or limitation 
+of incidental or consequential damages, so the above limitation or exclusion may not 
+apply to me.

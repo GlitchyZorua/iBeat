@@ -1,0 +1,1572 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "&Verbergen",                  IDM_HIDE
+        MENUITEM SEPARATOR
+        POPUP "&Alarm"
+        BEGIN
+            MENUITEM "&Neuer Alarm",                IDM_ALARM_SET
+            MENUITEM "&Alarm Übersicht",            IDM_ALARM_VIEW
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Einstellungen"
+        BEGIN
+            POPUP "&Zeit Formate"
+            BEGIN
+                MENUITEM "&Swatch Modus",               IDM_UDT
+                MENUITEM SEPARATOR
+                MENUITEM "&Zentibeats",                 IDM_CENTY
+                MENUITEM SEPARATOR
+                MENUITEM "&Keine lokale Zeit",          IDM_NLT
+                MENUITEM "1&2 Stunden Modus",           IDM_12H
+                MENUITEM "2&4 Stunden Modus",           IDM_24H
+                MENUITEM SEPARATOR
+                MENUITEM "2&000 Zähler",                IDM_Y2K
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "&Farbe ...",                  IDM_COLOR
+            MENUITEM "&Schrift ...",                IDM_FONT
+            POPUP "&Größe"
+            BEGIN
+                MENUITEM "&Normal",                     IDM_NORMAL
+                MENUITEM "&Klein",                      IDM_SMALL
+            END
+            MENUITEM "&Immer Sichtbar",             IDM_TOP
+            MENUITEM SEPARATOR
+            POPUP "&Akustik"
+            BEGIN
+                MENUITEM "&Herzschlag",                 IDM_HEARTBEAT
+                MENUITEM "&Alarm Ton",                  IDM_ALARM
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "S&ynchronisieren ...",        IDM_SNTP_SYNC
+        END
+        MENUITEM "&Ü&ber iBeat ...",            IDM_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "Be&enden",                    IDM_EXIT
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SMALL               ICON    DISCARDABLE     "small1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SET_ALARM DIALOGEX 0, 0, 242, 210
+STYLE DS_LOCALEDIT | DS_MODALFRAME | DS_3DLOOK | WS_VISIBLE | WS_CAPTION
+CAPTION "Neuer Alarm:"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Schließen",IDC_CLOSE,185,190,50,14
+    CONTROL         "MonthCalendar1",IDC_DATE,"SysMonthCal32",MCS_NOTODAY | 
+                    WS_TABSTOP,10,15,120,90,WS_EX_CLIENTEDGE
+    CONTROL         "DateTimePicker1",IDC_TIME,"SysDateTimePick32",
+                    DTS_UPDOWN | WS_TABSTOP | 0x8,155,90,65,15
+    EDITTEXT        IDC_EDIT_BEATS,10,186,45,14
+    PUSHBUTTON      "Jetzt",IDC_NOW,185,115,50,14
+    PUSHBUTTON      "Alarm Setzen",IDC_ALARM,105,190,75,14
+    GROUPBOX        "Datum:",IDC_SDATE,5,5,130,105
+    GROUPBOX        "Zeit:",IDC_STIME,140,5,95,105
+    GROUPBOX        "Beats:",IDC_SBEAT,5,175,55,30
+    GROUPBOX        "Notiz:",IDC_SNOTE,5,130,230,45
+    EDITTEXT        IDC_EDIT_REASON,10,140,220,30,ES_MULTILINE | 
+                    ES_WANTRETURN | WS_VSCROLL
+    COMBOBOX        IDC_COMBO1,65,115,110,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Wiederholung:",IDC_SREPEAT,10,115,47,8,WS_DISABLED
+    PUSHBUTTON      "Translate Beats",IDC_TRANSLATE,65,180,6,6,NOT 
+                    WS_VISIBLE | NOT WS_TABSTOP
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,145,15,85,70
+END
+
+IDD_VIEW_ALARM DIALOG DISCARDABLE  0, 0, 427, 210
+STYLE DS_LOCALEDIT | DS_MODALFRAME | DS_3DLOOK | WS_VISIBLE | WS_CAPTION
+CAPTION "Alarm Liste:"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,10,15,405,165
+    GROUPBOX        "Aktive Alarme:",IDC_SCURRENT,5,5,415,180
+    DEFPUSHBUTTON   "Schließen",IDC_CLOSE,370,190,50,14
+    PUSHBUTTON      "Alarm Entfernen",IDC_DELETE,5,190,60,14
+END
+
+IDD_SNTP_SYNC DIALOG DISCARDABLE  0, 0, 287, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "System Uhr Synchronisieren:"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Schließen",IDC_CLOSE,230,115,50,14
+    GROUPBOX        "SNTP Server:",IDC_STATIC,5,5,150,30
+    GROUPBOX        "Server Info:",IDC_STATIC,160,5,120,90
+    EDITTEXT        IDC_LI,205,15,70,14,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_MODE,205,55,70,14,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_STRATUM,205,35,70,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    EDITTEXT        IDC_VERSION,205,75,70,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Status:",IDC_STATIC,165,20,23,8
+    LTEXT           "Stratum:",IDC_STATIC,165,40,27,8
+    LTEXT           "Mode:",IDC_STATIC,165,60,21,8
+    LTEXT           "Version:",IDC_STATIC,165,80,26,8
+    DEFPUSHBUTTON   "Synchronisieren",IDC_SYNC,10,95,65,14
+    PUSHBUTTON      "System Uhr Stellen",IDC_SET,80,95,70,14
+    GROUPBOX        "Uhr Einstellungen:",IDC_SMANAGE,5,40,150,90
+    EDITTEXT        IDC_DELAY2,60,55,90,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Verzögerung:",IDC_SDELAY,10,60,45,8
+    EDITTEXT        IDC_OFFSET,60,74,90,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Abweichung:",IDC_SOFFSET,10,80,45,8
+    CONTROL         "Auto Sync.",IDC_AUTO_SYNC,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,165,115,50,10
+    CONTROL         "Progress1",IDC_STATUS,"msctls_progress32",PBS_SMOOTH | 
+                    WS_BORDER,10,115,140,8
+    GROUPBOX        "Automatisierung:",IDC_STATIC,160,100,65,30,WS_DISABLED
+    PUSHBUTTON      "read",IDC_READ,240,101,20,6,NOT WS_VISIBLE
+    EDITTEXT        IDC_SNTP,10,15,140,14,ES_AUTOHSCROLL
+END
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 237, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Über iBeat v2.0 [de]:"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Schließen",IDM_CLOSE,175,95,50,14
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",TCS_BOTTOM | 
+                    TCS_FIXEDWIDTH,5,5,220,80
+END
+
+IDD_T_AUTHOR DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Neue Versionen unter: http://www.artefakt.com/projects/ibeat",
+                    IDC_SLEGAL_LONG,95,95,205,10
+    GROUPBOX        "",IDC_SLEGAL,90,5,270,105
+    GROUPBOX        "Autor:",IDC_SAUTHOR,5,5,80,105
+    LTEXT           "Copyright © Holger Schmidt, 1998-1999, <hschmidt@artefakt.com>",
+                    IDC_SLEGAL_LONG2,95,70,215,10
+    LTEXT           "Deutsche Übersetzung: Holger Schmidt <hschmidt@artefakt.com>",
+                    IDC_SLEGAL_LONG3,95,80,215,10
+    CONTROL         120,IDC_STATIC,"Static",SS_BITMAP,10,15,67,89
+    LTEXT           "Build:",IDC_STATIC,95,15,18,8
+    LTEXT           "100",IDC_BUILD,115,15,25,8
+END
+
+IDD_T_INTERNET DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "iBeat Homepage",IDM_HOME,25,35,70,14
+    PUSHBUTTON      "iBeat Helppage",IDM_HELP,25,55,70,14
+    PUSHBUTTON      "Email an iBeat",IDM_MAIL,25,80,70,14
+    GROUPBOX        "Links ins Internet:",IDC_STATIC,5,5,355,105
+    PUSHBUTTON      "www.swatch.com",IDM_SWATCH,270,35,70,14
+    PUSHBUTTON      "universal-time.org",IDM_UNIVERSAL,270,55,70,14
+    GROUPBOX        "Andere Links:",IDC_STATIC,260,20,90,80
+    GROUPBOX        "iBeat Links:",IDC_STATIC,15,20,90,80
+END
+
+IDD_T_REGISTER DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Sie müssen iBeat nicht registrieren.\niBeat ist 'Freeware'.\nIch würde mich jedoch über eine email freuen.",
+                    IDC_STATIC,45,25,150,25
+    GROUPBOX        "iBeat Registrieren:",IDC_STATIC,5,5,355,105
+    PUSHBUTTON      "Email an iBeat",IDM_MAIL,285,90,70,14
+    ICON            IDI_SMALL,IDC_STATIC,15,25,21,20
+END
+
+IDD_T_BEATS DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "'iBeat' zeigt eine universelle Internet Zeit an. Der Tag wird dabei in 1000 Teile geteilt. Wenn es @456 'iBeats' in NewYork, ist, ist es @456 in Hongkong und @456 in London.",
+                    IDC_SINFO_LONG,40,31,280,20
+    LTEXT           "Um sicher zu gehen, daß man auch vom selben Tag spricht, wurde das Datum in 'iDays' umgewandelt. Dabei zählen 1000 abgelaufene Beats als ein 'iDay'.",
+                    IDC_STATIC,40,76,260,20
+    GROUPBOX        "Wie funktioniert iBeat?",IDC_STATIC,5,5,355,105
+    GROUPBOX        "iBeat:",IDC_STATIC,35,20,290,35
+    GROUPBOX        "iDay:",IDC_STATIC,35,65,290,35
+END
+
+IDD_T_MOON DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_AGE,190,25,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_FULL,190,45,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_NEW,190,65,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_YEAR,190,85,95,14,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "Der Mond:",IDC_STATIC,5,5,355,105
+    LTEXT           "Alter des Mondes:",IDC_STATIC,115,30,60,8
+    LTEXT           "Nächster Neumond:",IDC_STATIC,115,70,65,8
+    LTEXT           "Nächster Vollmond:",IDC_STATIC,115,50,65,8
+    LTEXT           "Dauer dieses Jahres:",IDC_STATIC,115,90,70,8
+    CONTROL         127,IDC_MOON,"Static",SS_BITMAP | SS_SUNKEN | WS_BORDER,
+                    15,20,89,81
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SET_ALARM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 235
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_VIEW_ALARM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 420
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_SNTP_SYNC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_T_AUTHOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_INTERNET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_REGISTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_BEATS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_MOON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDW_HEARTBEAT           WAVE    DISCARDABLE     "heartbeat.wav"
+IDW_ALARM               WAVE    DISCARDABLE     "Alarm.wav"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_HAND_OPEN           CURSOR  DISCARDABLE     "open.cur"
+IDC_HAND_CLOSED         CURSOR  DISCARDABLE     "closed.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_HOLGER              BITMAP  DISCARDABLE     "holger.bmp"
+IDB_MOON                BITMAP  DISCARDABLE     "moon.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DATETIME            "Datum:      Zeit:"
+    IDS_LOCAL               "Lokal:"
+    IDS_TIMEOUT             "Timeout"
+    IDS_REGISTER_TITEL      "iBeat Registrieren:"
+    IDS_REGISTER_TEXT       "Sie müssen iBeat nicht registrieren. iBeat ist 'Freeware'\nIch würde mich jedoch über eine email freuen.\n\nWollen sie mir eine email schreiben?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_HIDE                "&Verbergen"
+    IDS_SHOW                "&Zeigen"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_IBEAT               "iBeat:"
+    IDS_NOTE                "Notiz:"
+    IDS_FIRST_TITEL         "Willkommen bei iBeat:"
+    IDS_FIRST_TEXT          "Hallo, Sie starten iBeat zum ersten mal.\n\nDamit iBeat korrekt läuft, müssen Sie dafür sorgen, daß Ihre Systemzeit richtig eingestellt ist und Sie die richtige Zeitzone ausgewählt haben.\n\nMit der gedrückten linkten Maustaste können Sie das iBeat Fenster bewegen. Mit der rechten Taste rufen Sie das Menü auf.\n\nBitte schreiben Sie eine email mit Ihrer Meinung an:\nibeat@artefakt.com"
+    IDS_ALARM               "Alarm:"
+    IDS_SNTP_OPEN_TITEL     "SNTP Client Fehler:"
+    IDS_SNTP_OPEN_TEXT      "Fehler beim öffnen des SNTP Ports (123) !\nVieleicht wird der Port von einem anderen Programm verwendet."
+    IDS_SNTP_TIMEOUT_TEXT   "Timeout...\nKeine Server antwort!"
+    IDS_SNTP_TIMEOUT_TITEL  "SNTP Anforderungs Fehler:"
+    IDS_LI1_TITEL           "Besonderes Vorkommniss (Schalt Sekunde):"
+    IDS_LI1_TEXT            "Die letzte Minute dieses Tages hat 61 Sekunden."
+    IDS_LI2_TITEL           "Besonderes Vorkommniss (Schalt Sekunde):"
+    IDS_LI2_TEXT            "Die letzte Minute dieses Tages hat 59 Sekunden."
+    IDS_DAYS                "Tage"
+    IDS_AUTHOR              "Autor"
+    IDS_INTERNET            "Internet"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_BEATS               "Beats"
+    IDS_REGISTER            "Registrieren"
+    IDS_MOON                "Mond"
+    IDS_AND                 "und"
+    IDS_2000_TT             "Jahr 2000 Zähler oder Alarm"
+    IDS_BEAT_TT             "iBeat"
+    IDS_CBEAT_TT            "Zentibeat"
+    IDS_LOCAL_TT            "lokale Uhrzeit"
+    IDS_IDAY_TT             "iDay"
+    IDS_APP_TT              "iBeat: iDay@iBeat.Zentibeat"
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Englisch (USA) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "&Hide",                       IDM_HIDE
+        MENUITEM SEPARATOR
+        POPUP "&Alarm"
+        BEGIN
+            MENUITEM "&Set Alarm",                  IDM_ALARM_SET
+            MENUITEM "&View Alarms",                IDM_ALARM_VIEW
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Settings"
+        BEGIN
+            POPUP "&Time Format"
+            BEGIN
+                MENUITEM "S&watch Mode",                IDM_UDT
+                MENUITEM SEPARATOR
+                MENUITEM "&Centibeats",                 IDM_CENTY
+                MENUITEM SEPARATOR
+                MENUITEM "&No Local Time",              IDM_NLT
+                MENUITEM "1&2h Local Time",             IDM_12H
+                MENUITEM "2&4h Local Time",             IDM_24H
+                MENUITEM SEPARATOR
+                MENUITEM "&Y2K Counter",                IDM_Y2K
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "&Color ...",                  IDM_COLOR
+            MENUITEM "&Font ...",                   IDM_FONT
+            POPUP "&Size"
+            BEGIN
+                MENUITEM "&Normal",                     IDM_NORMAL
+                MENUITEM "&Small",                      IDM_SMALL
+            END
+            MENUITEM "Always on &Top",              IDM_TOP
+            MENUITEM SEPARATOR
+            POPUP "Acoustic&s"
+            BEGIN
+                MENUITEM "&HeartBeat",                  IDM_HEARTBEAT
+                MENUITEM "&Alarm",                      IDM_ALARM
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "Synchronize ...",             IDM_SNTP_SYNC
+        END
+        MENUITEM "&About ..",                   IDM_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SNTP_SYNC DIALOG DISCARDABLE  0, 0, 287, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Synchronize System Clock: "
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Close",IDC_CLOSE,230,115,50,14
+    GROUPBOX        "SNTP Server:",IDC_STATIC,5,5,150,30
+    GROUPBOX        "Server Info:",IDC_STATIC,160,5,120,90
+    EDITTEXT        IDC_LI,205,15,70,14,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_MODE,205,55,70,14,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_STRATUM,205,35,70,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    EDITTEXT        IDC_VERSION,205,75,70,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Status:",IDC_STATIC,165,20,23,8
+    LTEXT           "Stratum:",IDC_STATIC,165,40,27,8
+    LTEXT           "Mode:",IDC_STATIC,165,60,21,8
+    LTEXT           "Version:",IDC_STATIC,165,80,26,8
+    DEFPUSHBUTTON   "Synchronize",IDC_SYNC,10,95,65,14
+    PUSHBUTTON      "Set System Clock",IDC_SET,80,95,70,14
+    GROUPBOX        "Clock Settings",IDC_SMANAGE,5,40,150,90
+    EDITTEXT        IDC_DELAY2,60,55,90,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Delay:",IDC_SDELAY,10,60,45,8
+    EDITTEXT        IDC_OFFSET,60,74,90,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Offset:",IDC_SOFFSET,10,80,45,8
+    CONTROL         "Auto Sync.",IDC_AUTO_SYNC,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,165,115,50,10
+    CONTROL         "Progress1",IDC_STATUS,"msctls_progress32",PBS_SMOOTH | 
+                    WS_BORDER,10,115,140,8
+    GROUPBOX        "Automation:",IDC_STATIC,160,100,65,30,WS_DISABLED
+    PUSHBUTTON      "read",IDC_READ,240,101,20,6,NOT WS_VISIBLE
+    EDITTEXT        IDC_SNTP,10,15,140,14,ES_AUTOHSCROLL
+END
+
+IDD_SET_ALARM DIALOGEX 0, 0, 242, 210
+STYLE DS_LOCALEDIT | DS_MODALFRAME | DS_3DLOOK | WS_VISIBLE | WS_CAPTION
+CAPTION "Set Alarm:"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Close",IDC_CLOSE,185,190,50,14
+    CONTROL         "MonthCalendar1",IDC_DATE,"SysMonthCal32",MCS_NOTODAY | 
+                    WS_TABSTOP,10,15,120,90,WS_EX_CLIENTEDGE
+    CONTROL         "DateTimePicker1",IDC_TIME,"SysDateTimePick32",
+                    DTS_UPDOWN | WS_TABSTOP | 0x8,155,90,65,15
+    EDITTEXT        IDC_EDIT_BEATS,10,186,45,14
+    PUSHBUTTON      "Now",IDC_NOW,185,115,50,14
+    PUSHBUTTON      "Set Alarm",IDC_ALARM,105,190,75,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,145,15,85,70
+    GROUPBOX        "Date:",IDC_SDATE,5,5,130,105
+    GROUPBOX        "Time:",IDC_STIME,140,5,95,105
+    GROUPBOX        "Beats:",IDC_SBEAT,5,175,55,30
+    GROUPBOX        "Note:",IDC_SNOTE,5,130,230,45
+    EDITTEXT        IDC_EDIT_REASON,10,140,220,30,ES_MULTILINE | 
+                    ES_WANTRETURN | WS_VSCROLL
+    COMBOBOX        IDC_COMBO1,65,115,110,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Repeat Alarm:",IDC_SREPEAT,10,115,46,8,WS_DISABLED
+    PUSHBUTTON      "Translate Beats",IDC_TRANSLATE,65,180,6,6,NOT 
+                    WS_VISIBLE | NOT WS_TABSTOP
+END
+
+IDD_VIEW_ALARM DIALOG DISCARDABLE  0, 0, 427, 210
+STYLE DS_LOCALEDIT | DS_MODALFRAME | DS_3DLOOK | WS_VISIBLE | WS_CAPTION
+CAPTION "Alarm List:"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,10,15,405,165
+    GROUPBOX        "Current Alarms:",IDC_SCURRENT,5,5,415,180
+    DEFPUSHBUTTON   "Close",IDC_CLOSE,370,190,50,14
+    PUSHBUTTON      "Remove Alarm",IDC_DELETE,5,190,60,14
+END
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 237, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About iBeat v2.0 [en]:"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDM_CLOSE,175,95,50,14
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",TCS_BOTTOM | 
+                    TCS_FIXEDWIDTH,5,5,220,80
+END
+
+IDD_T_AUTHOR DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "New versions at: http://www.artefakt.com/projects/ibeat",
+                    IDC_SLEGAL_LONG,95,95,205,10
+    GROUPBOX        "",IDC_SLEGAL,90,5,270,105
+    GROUPBOX        "Author:",IDC_SAUTHOR,5,5,80,105
+    LTEXT           "Copyright © Holger Schmidt, 1998-1999, <hschmidt@artefakt.com>",
+                    IDC_SLEGAL_LONG2,95,70,215,10
+    LTEXT           "English translation: Holger Schmidt <hschmidt@artefakt.com>",
+                    IDC_SLEGAL_LONG3,95,80,200,10
+    CONTROL         120,IDC_STATIC,"Static",SS_BITMAP,10,15,67,89
+    LTEXT           "Build:",IDC_STATIC,95,15,18,8
+    LTEXT           "100",IDC_BUILD,115,15,30,8
+END
+
+IDD_T_REGISTER DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "You don't have to register iBeat.\niBeat is 'freeware'. Howerver, I would appreciate to recive an email if you use iBeat.",
+                    IDC_STATIC,45,25,150,25
+    GROUPBOX        "Register iBeat:",IDC_STATIC,5,5,355,105
+    PUSHBUTTON      "Email to iBeat",IDM_MAIL,285,90,70,14
+    ICON            IDI_SMALL,IDC_STATIC,15,25,21,20
+END
+
+IDD_T_INTERNET DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "iBeat Homepage",IDM_HOME,25,35,70,14
+    PUSHBUTTON      "iBeat Helppage",IDM_HELP,25,55,70,14
+    PUSHBUTTON      "Email to iBeat",IDM_MAIL,25,80,70,14
+    GROUPBOX        "Links to the internet:",IDC_STATIC,5,5,355,105
+    PUSHBUTTON      "www.swatch.com",IDM_SWATCH,270,35,70,14
+    PUSHBUTTON      "universal-time.org",IDM_UNIVERSAL,270,55,70,14
+    GROUPBOX        "Other links:",IDC_STATIC,260,20,90,80
+    GROUPBOX        "iBeat links:",IDC_STATIC,15,20,90,80
+END
+
+IDD_T_BEATS DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "'iBeat' displays an universal internet time. One day i divided into 1000 'beats' at a reference timezone. When it is @456 'iBeats' in NewYork, it is @456 in Hongkong and @456 in London.",
+                    IDC_SINFO_LONG,20,31,325,19
+    LTEXT           "To make sure you talk about the same day, the date is converted into 'iDays'. After every 1000 beats there is a new iDay. So the date is displayed as days since the beginning of the year.",
+                    IDC_STATIC,20,75,325,20
+    GROUPBOX        "How does iBeat work?",IDC_STATIC,5,5,355,105
+    GROUPBOX        "iBeat:",IDC_STATIC,15,20,335,35
+    GROUPBOX        "iDay:",IDC_STATIC,15,65,335,35
+END
+
+IDD_T_MOON DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_AGE,190,25,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_FULL,190,45,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_NEW,190,65,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_YEAR,190,85,95,14,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "The Moon:",IDC_STATIC,5,5,355,105
+    LTEXT           "Age of the moon:",IDC_STATIC,115,30,60,8
+    LTEXT           "Next new moon:",IDC_STATIC,115,70,65,8
+    LTEXT           "Next full moon:",IDC_STATIC,115,50,65,8
+    LTEXT           "How long is this year?",IDC_STATIC,115,90,70,8
+    CONTROL         127,IDC_MOON,"Static",SS_BITMAP | SS_SUNKEN | WS_BORDER,
+                    15,20,89,81
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SNTP_SYNC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_SET_ALARM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 235
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_VIEW_ALARM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 420
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_T_AUTHOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_REGISTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_INTERNET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_BEATS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_MOON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_HIDE                "&Hide"
+    IDS_SHOW                "Sho&w"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DATETIME            "Date:     Time:"
+    IDS_LOCAL               "Local:"
+    IDS_TIMEOUT             "Timeout"
+    IDS_REGISTER_TITEL      "Register iBeat:"
+    IDS_REGISTER_TEXT       "You don't have to register iBeat. iBeat is 'freeware'.\nHowever, i'd like to get an email.\n\nDo you want to write me an email?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_IBEAT               "iBeat:"
+    IDS_NOTE                "Note:"
+    IDS_FIRST_TITEL         "Welcome to iBeat:"
+    IDS_FIRST_TEXT          "Hello, this is your first time using 'iBeat'.\n\nIn order to get 'iBeat' working propperly,\nyou have to make sure that your system time\nand your timezone is set correctly.\n\nYou can move the iBeat window using the left mouse button\nand access the option menu with the right mouse button\n\nPlease send me some feedback to help me improving this program.\nibeat@artefakt.com"
+    IDS_ALARM               "Alarm:"
+    IDS_SNTP_OPEN_TITEL     "SNTP Client Error:"
+    IDS_SNTP_OPEN_TEXT      "Error opening SNTP port(123)!\nMaybe an other program uses this port."
+    IDS_SNTP_TIMEOUT_TEXT   "Timeout...\nNo server answere!"
+    IDS_SNTP_TIMEOUT_TITEL  "SNTP Request Error:"
+    IDS_LI1_TITEL           "Special Encounter (Leap Second):"
+    IDS_LI1_TEXT            "The last minute of this day has 61 seconds."""
+    IDS_LI2_TITEL           "Special Encounter (Leap Second):"
+    IDS_LI2_TEXT            "The last minute of this day has 59 seconds."""
+    IDS_DAYS                "Days"
+    IDS_AUTHOR              "Author"
+    IDS_INTERNET            "Internet"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_BEATS               "Beats"
+    IDS_REGISTER            "Register"
+    IDS_MOON                "Moon"
+    IDS_AND                 "and"
+    IDS_2000_TT             "Y2K countdown or alarm"
+    IDS_BEAT_TT             "iBeat"
+    IDS_CBEAT_TT            "sub beats"
+    IDS_LOCAL_TT            "local time"
+    IDS_IDAY_TT             "iDay"
+    IDS_APP_TT              "iBeat: iDay@iBeat.subbeat"
+END
+
+#endif    // Englisch (USA) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Portugiesisch (Brasilien) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_PTB)
+#ifdef _WIN32
+LANGUAGE LANG_PORTUGUESE, SUBLANG_PORTUGUESE_BRAZILIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "&Esconder",                   IDM_HIDE
+        MENUITEM SEPARATOR
+        POPUP "&Alarme"
+        BEGIN
+            MENUITEM "&Ajustar alarme",             IDM_ALARM_SET
+            MENUITEM "&Ver alarmes",                IDM_ALARM_VIEW
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Propriedades"
+        BEGIN
+            POPUP "Formato da &Hora"
+            BEGIN
+                MENUITEM "Modo &Swatch",                IDM_UDT
+                MENUITEM SEPARATOR
+                MENUITEM "&Centibeats",                 IDM_CENTY
+                MENUITEM SEPARATOR
+                MENUITEM "Sem &hora local",             IDM_NLT
+                MENUITEM "Hora local (1&2hrs)",         IDM_12H
+                MENUITEM "Hora local (2&4hrs)",         IDM_24H
+                MENUITEM SEPARATOR
+                MENUITEM "Contador do &ano 2000",       IDM_Y2K
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "&Cor ...",                    IDM_COLOR
+            MENUITEM "&Fonte ...",                  IDM_FONT
+            POPUP "T&amanho"
+            BEGIN
+                MENUITEM "&Normal",                     IDM_NORMAL
+                MENUITEM "&Pequeno",                    IDM_SMALL
+            END
+            MENUITEM "Sempre &acima",               IDM_TOP
+            MENUITEM SEPARATOR
+            POPUP "&Sons"
+            BEGIN
+                MENUITEM "&Coração",                    IDM_HEARTBEAT
+                MENUITEM "&Alarme",                     IDM_ALARM
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "Sincroni&zar ...",            IDM_SNTP_SYNC
+        END
+        MENUITEM "&Sobre",                      IDM_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "Sai&r",                       IDM_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 237, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sobre o iBeat v2.0 [sp]:"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Fechar",IDM_CLOSE,175,95,50,14
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",TCS_BOTTOM | 
+                    TCS_FIXEDWIDTH,5,5,220,80
+END
+
+IDD_SET_ALARM DIALOGEX 0, 0, 242, 210
+STYLE DS_LOCALEDIT | DS_MODALFRAME | DS_3DLOOK | WS_VISIBLE | WS_CAPTION
+CAPTION "Ajustar alarme:"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Fechar",IDC_CLOSE,185,190,50,14
+    CONTROL         "MonthCalendar1",IDC_DATE,"SysMonthCal32",MCS_NOTODAY | 
+                    WS_TABSTOP,10,15,120,90,WS_EX_CLIENTEDGE
+    CONTROL         "DateTimePicker1",IDC_TIME,"SysDateTimePick32",
+                    DTS_UPDOWN | WS_TABSTOP | 0x8,155,90,65,15
+    EDITTEXT        IDC_EDIT_BEATS,10,186,45,14
+    PUSHBUTTON      "Agora",IDC_NOW,185,115,50,14
+    PUSHBUTTON      "Ajustar alarme",IDC_ALARM,105,190,75,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,145,15,85,70
+    GROUPBOX        "Fechar:",IDC_SDATE,5,5,130,105
+    GROUPBOX        "Hora:",IDC_STIME,140,5,95,105
+    GROUPBOX        "Beats:",IDC_SBEAT,5,175,55,30
+    GROUPBOX        "Nota:",IDC_SNOTE,5,130,230,45
+    EDITTEXT        IDC_EDIT_REASON,10,140,220,30,ES_MULTILINE | 
+                    ES_WANTRETURN | WS_VSCROLL
+    COMBOBOX        IDC_COMBO1,65,115,110,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Repetir alarme:",IDC_SREPEAT,10,115,48,8,WS_DISABLED
+    PUSHBUTTON      "Converter Beats",IDC_TRANSLATE,65,180,6,6,NOT 
+                    WS_VISIBLE | NOT WS_TABSTOP
+END
+
+IDD_SNTP_SYNC DIALOG DISCARDABLE  0, 0, 287, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sincronizar o relógio do sistema: "
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Fechar",IDC_CLOSE,230,115,50,14
+    GROUPBOX        "Servidor SNTP:",IDC_STATIC,5,5,150,30
+    GROUPBOX        "Informação do servidor:",IDC_STATIC,160,5,120,90
+    EDITTEXT        IDC_LI,205,15,70,14,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_MODE,205,55,70,14,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_STRATUM,205,35,70,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    EDITTEXT        IDC_VERSION,205,75,70,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Estado:",IDC_STATIC,165,20,25,8
+    LTEXT           "Extrato:",IDC_STATIC,165,40,25,8
+    LTEXT           "Modo:",IDC_STATIC,165,60,21,8
+    LTEXT           "Versão:",IDC_STATIC,165,80,26,8
+    DEFPUSHBUTTON   "Sincronizar",IDC_SYNC,10,95,45,14
+    PUSHBUTTON      "Ajustar o relógio do sistema",IDC_SET,60,95,90,14
+    GROUPBOX        "Propriedades do relógio:",IDC_SMANAGE,5,40,150,90
+    EDITTEXT        IDC_DELAY2,60,55,90,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Demora:",IDC_SDELAY,10,60,45,8
+    EDITTEXT        IDC_OFFSET,60,74,90,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Diferença:",IDC_SOFFSET,10,80,45,8
+    CONTROL         "Auto-Sinc.",IDC_AUTO_SYNC,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,165,115,50,10
+    CONTROL         "Progress1",IDC_STATUS,"msctls_progress32",PBS_SMOOTH | 
+                    WS_BORDER,10,115,140,8
+    GROUPBOX        "Automação:",IDC_STATIC,160,100,65,30,WS_DISABLED
+    PUSHBUTTON      "Ler",IDC_READ,240,101,20,6,NOT WS_VISIBLE
+    EDITTEXT        IDC_SNTP,10,15,140,14,ES_AUTOHSCROLL
+END
+
+IDD_T_AUTHOR DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Actualizações: http://www.artefakt.com/projects/ibeat",
+                    IDC_SLEGAL_LONG,95,95,205,10
+    GROUPBOX        "",IDC_SLEGAL,90,5,270,105
+    GROUPBOX        "Autor:",IDC_SAUTHOR,5,5,80,105
+    LTEXT           "Copyright © Holger Schmidt, 1998-1999, <hschmidt@artefakt.com>",
+                    IDC_SLEGAL_LONG2,95,64,215,9
+    LTEXT           "Tradução ao português: Josnaldo Paes <josnaldo@remah.com.br>\nhttp://www.remah.com.br",
+                    IDC_SLEGAL_LONG3,95,75,250,16
+    CONTROL         120,IDC_STATIC,"Static",SS_BITMAP,10,15,67,89
+    LTEXT           "Build:",IDC_STATIC,95,15,18,8
+    LTEXT           "100",IDC_BUILD,115,15,30,8
+END
+
+IDD_T_BEATS DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "'iBeat' mostra a hora universal da Internet. Um dia se divide em 1000 'beats' com base em um fuso horário de referência. Quando são @456 (iBeats) en Nova York, são @456 em Hong Kong e @456 em Londres.",
+                    IDC_SINFO_LONG,20,25,325,25
+    LTEXT           "Para ter certeza que você fala sobre o mesmo dia, a data é convertida para 'iDays'. Após cada 1000 beats há um novo iDay. Então a data é mostrada como dias desde o início do ano.",
+                    IDC_STATIC,20,80,325,17
+    GROUPBOX        "Como o iBeat funciona?",IDC_STATIC,5,5,355,105
+    GROUPBOX        "iBeat:",IDC_STATIC,15,15,335,40
+    GROUPBOX        "iDay:",IDC_STATIC,15,70,335,30
+END
+
+IDD_T_INTERNET DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Página principal do iBeat",IDM_HOME,25,35,90,14
+    PUSHBUTTON      "Página de ajuda do iBeat",IDM_HELP,25,55,90,14
+    PUSHBUTTON      "Email para iBeat",IDM_MAIL,35,80,70,14
+    GROUPBOX        "Links para a Internet:",IDC_STATIC,5,5,355,105
+    PUSHBUTTON      "www.swatch.com",IDM_SWATCH,270,35,70,14
+    PUSHBUTTON      "universal-time.org",IDM_UNIVERSAL,270,55,70,14
+    GROUPBOX        "Outros Links:",IDC_STATIC,260,20,90,80
+    GROUPBOX        "Links do iBeat:",IDC_STATIC,15,20,110,80
+END
+
+IDD_T_MOON DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_AGE,195,25,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_FULL,195,45,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_NEW,195,65,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_YEAR,195,85,95,14,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "A lua:",IDC_STATIC,5,5,355,105
+    LTEXT           "Idade da lua:",IDC_STATIC,115,30,60,8
+    LTEXT           "Próxima lua nova:",IDC_STATIC,115,70,65,8
+    LTEXT           "Próxima lua cheia:",IDC_STATIC,115,50,65,8
+    LTEXT           "Quanto dura este ano?",IDC_STATIC,115,90,77,8
+    CONTROL         127,IDC_MOON,"Static",SS_BITMAP | SS_SUNKEN | WS_BORDER,
+                    15,20,89,81
+END
+
+IDD_T_REGISTER DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Você não tem que registrar o iBeat. iBeat é um programa gratuito. Entretanto, gostaria de receber um email se você usa o iBeat.",
+                    IDC_STATIC,45,25,150,25
+    GROUPBOX        "Registro do iBeat:",IDC_STATIC,5,5,355,105
+    PUSHBUTTON      "Email para iBeat",IDM_MAIL,285,90,70,14
+    ICON            IDI_SMALL,IDC_STATIC,15,25,20,20
+END
+
+IDD_VIEW_ALARM DIALOG DISCARDABLE  0, 0, 427, 210
+STYLE DS_LOCALEDIT | DS_MODALFRAME | DS_3DLOOK | WS_VISIBLE | WS_CAPTION
+CAPTION "Alarm List:"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,10,15,405,165
+    GROUPBOX        "Alarmes Atuais:",IDC_SCURRENT,5,5,415,180
+    DEFPUSHBUTTON   "Fechar",IDC_CLOSE,370,190,50,14
+    PUSHBUTTON      "Desligar alarme",IDC_DELETE,5,190,60,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_SET_ALARM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 235
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_SNTP_SYNC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_T_AUTHOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_BEATS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_INTERNET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_MOON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_REGISTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_VIEW_ALARM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 420
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_HIDE                "&Esconder"
+    IDS_SHOW                "&Mostrar"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DATETIME            "Data:     Hora:"
+    IDS_LOCAL               "Local:"
+    IDS_TIMEOUT             "Timeout"
+    IDS_REGISTER_TITEL      "Registro de iBeat:"
+    IDS_REGISTER_TEXT       "Você não tem que registrar o iBeat. iBeat é 'gratuito'.\nEntretanto, eu gostaria de receber um email.\n\nVocê quer me enviar um email?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_IBEAT               "iBeat:"
+    IDS_NOTE                "Note:"
+    IDS_FIRST_TITEL         "Benvindo ao iBeat:"
+    IDS_FIRST_TEXT          "Olá, esta é sua primeira vez usando o 'iBeat'.\n\nPara ter o 'iBeat' funcionado corretamente,\ncertifique-se que a hora de seu sistema\ne seu fuso horário estão corretos.\n\nVocê pode mover a janela do iBeat usando o botão esquerdo do mouse\ne acessar o menu de opções com o botão direito.\n\nPor favor, me envie um retorno para me ajudar a melhorar este programa.\nibeat@artefakt.com"
+    IDS_ALARM               "Alarme:"
+    IDS_SNTP_OPEN_TITEL     "Erro do Cliente SNTP:"
+    IDS_SNTP_OPEN_TEXT      "Erro abrindo a porta SNTP(123)!\nUm outro programa pode estar usando a porta."
+    IDS_SNTP_TIMEOUT_TEXT   "Timeout...\nServidor não responde!"
+    IDS_SNTP_TIMEOUT_TITEL  "Erro de requisição SNTP:"
+    IDS_LI1_TITEL           "Ocorrência Especial (Salto de Segundo):"
+    IDS_LI1_TEXT            "O último minuto deste dia tem 61 segundos."""
+    IDS_LI2_TITEL           "Ocorrência Especial (Salto de Segundo):"
+    IDS_LI2_TEXT            "O último minuto deste dia tem 59 segundos."""
+    IDS_DAYS                "dias"
+    IDS_AUTHOR              "Autor"
+    IDS_INTERNET            "Internet"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_BEATS               "beats"
+    IDS_REGISTER            "Registro"
+    IDS_MOON                "A lua"
+    IDS_AND                 "e"
+    IDS_2000_TT             "Y2K contagem regressiva or alarme"
+    IDS_BEAT_TT             "iBeat"
+    IDS_CBEAT_TT            "centibeats"
+    IDS_LOCAL_TT            "hora local"
+    IDS_IDAY_TT             "iDays"
+    IDS_APP_TT              "iBeat:iDays@iBeat.centibeats"
+END
+
+#endif    // Portugiesisch (Brasilien) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Spanisch (Mexikanisch) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ESM)
+#ifdef _WIN32
+LANGUAGE LANG_SPANISH, SUBLANG_SPANISH_MEXICAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "Menu"
+    BEGIN
+        MENUITEM "&Esconder",                   IDM_HIDE
+        MENUITEM SEPARATOR
+        POPUP "&Alarma"
+        BEGIN
+            MENUITEM "&Fijar alarma",               IDM_ALARM_SET
+            MENUITEM "&Ver alarmas",                IDM_ALARM_VIEW
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Propiedades"
+        BEGIN
+            POPUP "&Formato del reloj"
+            BEGIN
+                MENUITEM "Modo &Swatch",                IDM_UDT
+                MENUITEM SEPARATOR
+                MENUITEM "&Centibeats",                 IDM_CENTY
+                MENUITEM SEPARATOR
+                MENUITEM "&Sin hora local",             IDM_NLT
+                MENUITEM "Hora local (1&2hrs)",         IDM_12H
+                MENUITEM "Hora local (2&4hrs)",         IDM_24H
+                MENUITEM SEPARATOR
+                MENUITEM "Contador al &año 2000",       IDM_Y2K
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "&Colores ...",                IDM_COLOR
+            MENUITEM "&Tipo de letra ...",          IDM_FONT
+            POPUP "T&amaño"
+            BEGIN
+                MENUITEM "&Normal",                     IDM_NORMAL
+                MENUITEM "&Pequeño",                    IDM_SMALL
+            END
+            MENUITEM "Siempre &encima",             IDM_TOP
+            MENUITEM SEPARATOR
+            POPUP "&Sonidos"
+            BEGIN
+                MENUITEM "&Latido",                     IDM_HEARTBEAT
+                MENUITEM "&Alarm",                      IDM_ALARM
+            END
+            MENUITEM SEPARATOR
+            MENUITEM "Sincroni&zar ...",            IDM_SNTP_SYNC
+        END
+        MENUITEM "A&cerca de",                  IDM_ABOUT
+        MENUITEM SEPARATOR
+        MENUITEM "&Salir",                      IDM_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SET_ALARM DIALOGEX 0, 0, 242, 210
+STYLE DS_LOCALEDIT | DS_MODALFRAME | DS_3DLOOK | WS_VISIBLE | WS_CAPTION
+CAPTION "Fijar alarma:"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Cerrar",IDC_CLOSE,185,190,50,14
+    CONTROL         "MonthCalendar1",IDC_DATE,"SysMonthCal32",MCS_NOTODAY | 
+                    WS_TABSTOP,10,15,120,90,WS_EX_CLIENTEDGE
+    CONTROL         "DateTimePicker1",IDC_TIME,"SysDateTimePick32",
+                    DTS_UPDOWN | WS_TABSTOP | 0x8,155,90,65,15
+    EDITTEXT        IDC_EDIT_BEATS,10,186,45,14
+    PUSHBUTTON      "Ahora",IDC_NOW,185,115,50,14
+    PUSHBUTTON      "Fijar alarma",IDC_ALARM,105,190,75,14
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME,145,15,85,70
+    GROUPBOX        "Fecha:",IDC_SDATE,5,5,130,105
+    GROUPBOX        "Hora:",IDC_STIME,140,5,95,105
+    GROUPBOX        "Beats:",IDC_SBEAT,5,175,55,30
+    GROUPBOX        "Nota:",IDC_SNOTE,5,130,230,45
+    EDITTEXT        IDC_EDIT_REASON,10,140,220,30,ES_MULTILINE | 
+                    ES_WANTRETURN | WS_VSCROLL
+    COMBOBOX        IDC_COMBO1,65,115,110,30,CBS_DROPDOWN | CBS_SORT | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Repetir alarma:",IDC_SREPEAT,10,115,48,8,WS_DISABLED
+    PUSHBUTTON      "Translate Beats",IDC_TRANSLATE,65,180,6,6,NOT 
+                    WS_VISIBLE | NOT WS_TABSTOP
+END
+
+IDD_VIEW_ALARM DIALOG DISCARDABLE  0, 0, 427, 210
+STYLE DS_LOCALEDIT | DS_MODALFRAME | DS_3DLOOK | WS_VISIBLE | WS_CAPTION
+CAPTION "Alarm List:"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "List1",IDC_LIST,"SysListView32",LVS_REPORT | 
+                    LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | 
+                    WS_TABSTOP,10,15,405,165
+    GROUPBOX        "Current Alarms:",IDC_SCURRENT,5,5,415,180
+    DEFPUSHBUTTON   "Cerrar",IDC_CLOSE,370,190,50,14
+    PUSHBUTTON      "Quitar alarma",IDC_DELETE,5,190,60,14
+END
+
+IDD_ABOUT DIALOG DISCARDABLE  0, 0, 237, 121
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Acerca de iBeat v2.0 [sp]:"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Cerrar",IDM_CLOSE,175,95,50,14
+    CONTROL         "Tab1",IDC_TAB,"SysTabControl32",TCS_BOTTOM | 
+                    TCS_FIXEDWIDTH,5,5,220,80
+END
+
+IDD_SNTP_SYNC DIALOG DISCARDABLE  0, 0, 287, 135
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sincronizar el reloj del sistema: "
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Cerrar",IDC_CLOSE,230,115,50,14
+    GROUPBOX        "SNTP Server:",IDC_STATIC,5,5,150,30
+    GROUPBOX        "Información del servidor:",IDC_STATIC,160,5,120,90
+    EDITTEXT        IDC_LI,205,15,70,14,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_MODE,205,55,70,14,ES_AUTOHSCROLL | ES_READONLY | NOT 
+                    WS_TABSTOP
+    EDITTEXT        IDC_STRATUM,205,35,70,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    EDITTEXT        IDC_VERSION,205,75,70,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Estado:",IDC_STATIC,165,20,25,8
+    LTEXT           "Estrato:",IDC_STATIC,165,40,25,8
+    LTEXT           "Modo:",IDC_STATIC,165,60,21,8
+    LTEXT           "Versión:",IDC_STATIC,165,80,26,8
+    DEFPUSHBUTTON   "Sincronizar",IDC_SYNC,10,95,45,14
+    PUSHBUTTON      "Ajustar el reloj del sistema",IDC_SET,60,95,90,14
+    GROUPBOX        "Propiedades del reloj:",IDC_SMANAGE,5,40,150,90
+    EDITTEXT        IDC_DELAY2,60,55,90,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Demora:",IDC_SDELAY,10,60,45,8
+    EDITTEXT        IDC_OFFSET,60,74,90,14,ES_AUTOHSCROLL | ES_READONLY | 
+                    NOT WS_TABSTOP
+    LTEXT           "Diferencia:",IDC_SOFFSET,10,80,45,8
+    CONTROL         "Auto Sync.",IDC_AUTO_SYNC,"Button",BS_AUTOCHECKBOX | 
+                    WS_DISABLED | WS_TABSTOP,165,115,50,10
+    CONTROL         "Progress1",IDC_STATUS,"msctls_progress32",PBS_SMOOTH | 
+                    WS_BORDER,10,115,140,8
+    GROUPBOX        "Automation:",IDC_STATIC,160,100,65,30,WS_DISABLED
+    PUSHBUTTON      "read",IDC_READ,240,101,20,6,NOT WS_VISIBLE
+    EDITTEXT        IDC_SNTP,10,15,140,14,ES_AUTOHSCROLL
+END
+
+IDD_T_AUTHOR DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "Actualizaciones: http://www.artefakt.com/projects/ibeat",
+                    IDC_SLEGAL_LONG,95,95,205,10
+    GROUPBOX        "",IDC_SLEGAL,90,5,270,105
+    GROUPBOX        "Autor:",IDC_SAUTHOR,5,5,80,105
+    LTEXT           "Copyright © Holger Schmidt, 1998-1999, <hschmidt@artefakt.com>",
+                    IDC_SLEGAL_LONG2,95,70,215,10
+    LTEXT           "Traducción al español: Ricardo Arturo Espinoza Reyes <richard@ags.ciateq.mx>",
+                    IDC_SLEGAL_LONG3,95,80,200,10
+    CONTROL         120,IDC_STATIC,"Static",SS_BITMAP,10,15,67,89
+    LTEXT           "Build:",IDC_STATIC,95,15,18,8
+    LTEXT           "100",IDC_BUILD,115,15,30,8
+END
+
+IDD_T_BEATS DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "'iBeat' muestra la hora universal de Internet. Un día se divide en 1000 'beats' en base a un huso horario de referencia. Cuando son las @456 (iBeats) en Nueva York, son las @456 en Hong Kong y las @456 en Londres.",
+                    IDC_SINFO_LONG,20,25,325,25
+    LTEXT           "To make sure you talk about the same day, the date is converted into 'iDays'. After every 1000 beats there is a new iDay. So the date is displayed as days since the beginning of the year.",
+                    IDC_STATIC,20,80,325,17
+    GROUPBOX        "How does iBeat work?",IDC_STATIC,5,5,355,105
+    GROUPBOX        "iBeat:",IDC_STATIC,15,15,335,40
+    GROUPBOX        "iDay:",IDC_STATIC,15,70,335,30
+END
+
+IDD_T_INTERNET DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "Página principal de iBeat",IDM_HOME,25,35,90,14
+    PUSHBUTTON      "Página de ayuda de iBeat",IDM_HELP,25,55,90,14
+    PUSHBUTTON      "Correo a iBeat",IDM_MAIL,35,80,70,14
+    GROUPBOX        "Vínculos a Internet:",IDC_STATIC,5,5,355,105
+    PUSHBUTTON      "www.swatch.com",IDM_SWATCH,270,35,70,14
+    PUSHBUTTON      "universal-time.org",IDM_UNIVERSAL,270,55,70,14
+    GROUPBOX        "Otros Vínculos:",IDC_STATIC,260,20,90,80
+    GROUPBOX        "Vínculos de iBeat:",IDC_STATIC,15,20,110,80
+END
+
+IDD_T_MOON DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_AGE,195,25,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_FULL,195,45,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_NEW,195,65,95,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_YEAR,195,85,95,14,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "La luna:",IDC_STATIC,5,5,355,105
+    LTEXT           "Age of the moon:",IDC_STATIC,115,30,60,8
+    LTEXT           "Próxima luna nueva:",IDC_STATIC,115,70,65,8
+    LTEXT           "Próxima luna llena:",IDC_STATIC,115,50,65,8
+    LTEXT           "¿Cuánto dura este año?",IDC_STATIC,115,90,77,8
+    CONTROL         127,IDC_MOON,"Static",SS_BITMAP | SS_SUNKEN | WS_BORDER,
+                    15,20,89,81
+END
+
+IDD_T_REGISTER DIALOG DISCARDABLE  0, 0, 366, 116
+STYLE WS_CHILD
+FONT 8, "MS Sans Serif"
+BEGIN
+    LTEXT           "No tienes que registrar iBeat. iBeat es un programa gratuito. Sin embargo, me agradaría recibir un correo electrónico si usas iBeat.",
+                    IDC_STATIC,45,25,150,25
+    GROUPBOX        "Registro de iBeat:",IDC_STATIC,5,5,355,105
+    PUSHBUTTON      "Correo a iBeat",IDM_MAIL,285,90,70,14
+    ICON            IDI_SMALL,IDC_STATIC,15,25,20,20
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SET_ALARM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 235
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_VIEW_ALARM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 420
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 114
+    END
+
+    IDD_SNTP_SYNC, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 280
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_T_AUTHOR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_BEATS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_INTERNET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_MOON, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_T_REGISTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 359
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_HIDE                "&Esconder"
+    IDS_SHOW                "Sho&w"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_DATETIME            "Date:     Time:"
+    IDS_LOCAL               "Local:"
+    IDS_TIMEOUT             "Timeout"
+    IDS_REGISTER_TITEL      "Registro de iBeat:"
+    IDS_REGISTER_TEXT       "You don't have to register iBeat. iBeat is 'freeware'.\nHowever, i'd like to get an email.\n\nDo you want to write me an email?"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_IBEAT               "iBeat:"
+    IDS_NOTE                "Note:"
+    IDS_FIRST_TITEL         "Welcome to iBeat:"
+    IDS_FIRST_TEXT          "Hello, this is your first time using 'iBeat'.\n\nIn order to get 'iBeat' working propperly,\nyou have to make sure that your system time\nand your timezone is set correctly.\n\nYou can move the iBeat window using the left mouse button\nand access the option menu with the right mouse button\n\nPlease send me some feedback to help me improving this program.\nibeat@artefakt.com"
+    IDS_ALARM               "Alarma:"
+    IDS_SNTP_OPEN_TITEL     "SNTP Client Error:"
+    IDS_SNTP_OPEN_TEXT      "Error opening SNTP port(123)!\nMaybe an other program uses this port."
+    IDS_SNTP_TIMEOUT_TEXT   "Timeout...\nNo server answere!"
+    IDS_SNTP_TIMEOUT_TITEL  "SNTP Request Error:"
+    IDS_LI1_TITEL           "Special Encounter (Leap Second):"
+    IDS_LI1_TEXT            "The last minute of this day has 61 seconds."""
+    IDS_LI2_TITEL           "Special Encounter (Leap Second):"
+    IDS_LI2_TEXT            "The last minute of this day has 59 seconds."""
+    IDS_DAYS                "días"
+    IDS_AUTHOR              "Autor"
+    IDS_INTERNET            "Internet"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_BEATS               "beats"
+    IDS_REGISTER            "Registro"
+    IDS_MOON                "La luna"
+    IDS_AND                 "y"
+    IDS_2000_TT             "Y2K countdown or alarm"
+    IDS_BEAT_TT             "iBeat"
+    IDS_CBEAT_TT            "centibeats"
+    IDS_LOCAL_TT            "local time"
+    IDS_IDAY_TT             "iDías"
+    IDS_APP_TT              "iBeat:iDías@iBeat.centibeats"
+END
+
+#endif    // Spanisch (Mexikanisch) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

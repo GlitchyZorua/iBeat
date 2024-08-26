@@ -1,0 +1,41 @@
+<html>
+<body>
+<pre>
+<h1>Erstellungsprotokoll</h1>
+<h3>
+--------------------Konfiguration: iBeat - Win32 Release--------------------
+</h3>
+<h3>Befehlszeilen</h3>
+Erstellen der temporären Datei  "C:\WIN95\TEMP\RSP3211.TMP" mit Inhalten
+[
+/nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/iBeat.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Projekte\iBeat\WinMain.cpp"
+]
+Creating command line "cl.exe @C:\WIN95\TEMP\RSP3211.TMP" 
+Erstellen der temporären Datei  "C:\WIN95\TEMP\RSP3212.TMP" mit Inhalten
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib wsock32.lib winmm.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/iBeat.pdb" /machine:I386 /out:"Release/iBeat.exe" 
+.\Release\ibeat.obj
+.\Release\moon.obj
+.\Release\socket.obj
+.\Release\synctime.obj
+.\Release\WinMain.obj
+.\Release\beat.res
+]
+Erstellen der Befehlzeile "link.exe @C:\WIN95\TEMP\RSP3212.TMP"
+<h3>Ausgabefenster</h3>
+Kompilierung läuft...
+WinMain.cpp
+C:\Projekte\iBeat\WinMain.cpp(2359) : warning C4244: '=' : Konvertierung von 'double' in 'int', moeglicher Datenverlust
+C:\Projekte\iBeat\WinMain.cpp(2377) : warning C4244: '=' : Konvertierung von 'double' in 'int', moeglicher Datenverlust
+C:\Projekte\iBeat\WinMain.cpp(2384) : warning C4244: '*=' : Konvertierung von 'double' in 'int', moeglicher Datenverlust
+C:\Projekte\iBeat\WinMain.cpp(2397) : warning C4244: '=' : Konvertierung von 'double' in 'int', moeglicher Datenverlust
+Linker-Vorgang läuft...
+
+
+
+<h3>Ergebnisse</h3>
+iBeat.exe - 0 Fehler, 4 Warnung(en)
+</pre>
+</body>
+</html>
