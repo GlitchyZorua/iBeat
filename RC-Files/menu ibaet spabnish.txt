@@ -1,0 +1,44 @@
+
+Main menu.
+
+Hide          Esconder
+Alarm         Alarma
+Settings      Propiedades
+About         Acerca de
+Exit          Salir
+
+
+
+Alarm submenu:
+
+Set alarm     Fijar alarma
+View alarms   Ver alarmas
+
+
+
+Settings submenu:
+
+Time format      Formato del reloj
+Color            Colores
+Font             Tipo de letra
+Size             Tamaño
+Always on top    Siempre encima
+Acoustics        Sonidos
+Synchronize      Sincronizar
+
+     Time format submenu:
+          Swatch Mode      Modo Swatch
+          Centibeats	   Centibeats
+          No local time    Sin hora local
+          12h local time   Hora local (12hrs)
+          24h local time   Hora local (24hrs)
+          Y2K Counter      Contador al año 2000.
+
+     Size submenu:
+          Normal           Normal
+          Small            Pequeño
+
+     Acoustics:
+          Heartbeat        Latido
+          Alarm            Alarm
+

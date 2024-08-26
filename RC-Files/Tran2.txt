@@ -1,0 +1,85 @@
+Ok. Let's start with the translation of the alarm screen:
+
+Date           Fecha
+Time           Hora
+Repeat alarm   Repetir alarma
+Now            Ahora
+Beats          Beats
+Set alarm      Fijar alarma
+Close          Cerrar
+Note           Nota
+Remove alarm   Quitar alarma
+
+
+
+Now the Synchronize screen
+
+Synchronize System Clock         Sincronizar el reloj del sistema
+Clock Settings                   Propiedades del reloj
+Delay                            Demora
+Offset                           Diferencia
+Synchronize                      Sincronizar
+Set System Clock                 Ajustar el reloj del sistema
+Server info                      Información del servidor
+Status                           Estado
+Stratum                          Estrato
+Mode                             Modo
+Version                          Versión
+Close                            Cerrar
+
+
+
+The about screen:
+
+
+About iBeat                              Acerca de iBeat
+
+Author                                   Autor
+Spanish translation:                     Traducción al español: Ricardo Arturo Espinoza Reyes <richard@ags.ciateq.mx>
+New versions at:                         Actualizaciones:
+
+Beats                                    Beats
+
+iBeat:                                   iBeat:
+'iBeat' displays an universal internet   'iBeat' muestra la hora universal de Internet.
+time. One day is divided into 1000       Un día se divide en 1000 'beats' en base a un
+'beats' at a reference time zone.        huso horario de referencia. Cuando son las @456
+When it's @456 'iBeats' in New York, it  (iBeats) en Nueva York, son las @456 en Hong Kong
+is @456 in Hongkong and @456 in London.  y las @456 en Londres.
+
+'iBeat' muestra la hora universal de Internet. Un día se divide en 1000 'beats' en base a un huso horario de referencia. Cuando son las @456 (iBeats) en Nueva York, son las @456 en Hong Kong y las @456 en Londres.
+
+Internet                                 Internet
+
+Links to the internet                    Vínculos a Internet
+iBeat links                              Vínculos de iBeat
+iBeat Homepage                           Página principal de iBeat
+iBeat Helppage                           Página de ayuda de iBeat
+
+Emaill to iBeat                          Correo a iBeat
+
+Other links                              Otros Vínculos
+
+Register                                 Registro
+Register iBeat:                          Registro de iBeat
+
+You don't have to register iBeat.        No tienes que registrar iBeat.
+iBeat is freeware. However, I would      iBeat es un programa gratuito. Sin embargo,
+appreciate to receive an email if you    me agradaría recibir un correo electrónico
+use iBeat.                               si usas iBeat.
+
+No tienes que registrar iBeat. iBeat es un programa gratuito. Sin embargo, me agradaría recibir un correo electrónico si usas iBeat.
+
+Moon                                     La luna
+Age of the moon:                         ?
+Next full moon:                          Próxima luna llena.
+Next new moon:                           Próxima luna nueva.
+How long is this year?                   ¿Cuánto dura este año?
+
+X days and Y beats                       X días y Y beats.
+                      * Note: If there is only one day, then you should
+                              use singular (1 día), but for zero, you'd
+                              use plural (0 días). The same works for
+                              beat.
+
+Close                                    Cerrar
